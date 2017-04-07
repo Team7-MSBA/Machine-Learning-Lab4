@@ -143,16 +143,6 @@ labels<-c(rep(1,n),rep(2,n),rep(3,n)) # the "true" labels of the points
 #####################
 #### SECTION 2 Part b
 #####################
-library(pls)
-library(ggplot2)
-pr.out = prcomp(X)
-vectors<-pr.out$rotation
-z1<-X %*% vectors[,1]
-z2<-X %*% vectors[,2]
-#this part is not done:
-col = rep(c("red","blue"),each=20)
-plot(pr.out$x[,1], pr.out$x[,2], pch="", main = "Your Plot Title", xlab = "PC 1", ylab = "PC 2")
-text(pr.out$x[,1], pr.out$x[,2], labels=rownames(pr.out$x), col = col)
 
 #plot the first two principal component score vectors
 biplot(pr.out, scale=0)
