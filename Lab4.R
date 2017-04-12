@@ -150,7 +150,7 @@ scores <- data.frame(pca$x[,1:2])
 #plot the first two principal component score vectors
 qplot(x=PC1, y=PC2, data=scores, colour=factor(labels)) +
   theme(legend.position="none")
-
+pr.out = prcomp(X)
 #####################
 #### SECTION 2 Part c
 #####################
