@@ -143,9 +143,13 @@ labels<-c(rep(1,n),rep(2,n),rep(3,n)) # the "true" labels of the points
 #####################
 #### SECTION 2 Part b
 #####################
-
+library(ggplot2)
+data<-as.data.frame(X)
+pca <- prcomp(data)
+scores <- data.frame(labels, pca$x[,1:2])
 #plot the first two principal component score vectors
-biplot(pr.out, scale=0)
+qplot(x=PC1, y=PC2, data=scores, colour=factor(labels)) +
+  theme(legend.position="none")
 
 #####################
 #### SECTION 2 Part c
